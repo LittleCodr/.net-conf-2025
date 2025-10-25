@@ -68,8 +68,8 @@ export default function Speakers() {
       {/* Enhanced background animations */}
       <div className="absolute inset-0 overflow-hidden -z-10">
         <div className="absolute top-16 right-16 w-48 h-48 bg-cyan/5 rounded-full mix-blend-multiply filter blur-3xl animate-float-wave" />
-        <div className="absolute bottom-16 left-16 w-56 h-56 bg-accent/5 rounded-full mix-blend-multiply filter blur-3xl animate-float-wave-reverse" />
-        <div className="absolute top-1/2 left-1/2 w-40 h-40 bg-indigo/10 rounded-full mix-blend-multiply filter blur-2xl animate-pulse-wave" />
+        <div className="absolute bottom-16 left-16 w-56 h-56 bg-accent/5 rounded-full mix-blend-multiply filter blur-3xl animate-wave" />
+        <div className="absolute top-1/2 left-1/2 w-40 h-40 bg-indigo/10 rounded-full mix-blend-multiply filter blur-2xl animate-rotate-3d" />
       </div>
 
       <div className="container mx-auto px-4">
@@ -121,8 +121,8 @@ export default function Speakers() {
               >
                 <div className="glass-card p-6 text-center relative overflow-hidden transition-all duration-300 group-hover:scale-105 group-hover:rotate-1">
                   {/* Floating accent elements */}
-                  <div className="absolute top-2 right-2 w-3 h-3 bg-accent/30 rounded-full animate-bounce-slow" />
-                  <div className="absolute bottom-2 left-2 w-2 h-2 bg-cyan/40 rounded-full animate-bounce-reverse" />
+                  <div className="absolute top-2 right-2 w-3 h-3 bg-accent/30 rounded-full animate-bounce-gentle" />
+                  <div className="absolute bottom-2 left-2 w-2 h-2 bg-cyan/40 rounded-full animate-shimmer" />
 
                   {/* Profile image with 3D effect */}
                   <div className="relative mb-4">
@@ -239,107 +239,6 @@ export default function Speakers() {
           </motion.div>
         </motion.div>
       </div>
-
-      <style jsx global>{`
-        @keyframes float-wave {
-          0%, 100% {
-            transform: translate(0px, 0px) rotate(0deg) scale(1);
-          }
-          25% {
-            transform: translate(30px, -40px) rotate(90deg) scale(1.1);
-          }
-          50% {
-            transform: translate(-20px, -80px) rotate(180deg) scale(0.9);
-          }
-          75% {
-            transform: translate(-40px, -30px) rotate(270deg) scale(1.15);
-          }
-        }
-
-        @keyframes float-wave-reverse {
-          0%, 100% {
-            transform: translate(0px, 0px) rotate(0deg) scale(1);
-          }
-          33% {
-            transform: translate(-35px, 45px) rotate(-120deg) scale(1.2);
-          }
-          66% {
-            transform: translate(25px, -25px) rotate(-240deg) scale(0.8);
-          }
-        }
-
-        @keyframes pulse-wave {
-          0%, 100% {
-            opacity: 0.4;
-            transform: scale(1) rotateX(0deg) rotateY(0deg);
-          }
-          50% {
-            opacity: 0.8;
-            transform: scale(1.2) rotateX(8deg) rotateY(8deg);
-          }
-        }
-
-        @keyframes bounce-slow {
-          0%, 100% {
-            transform: translateY(0px) scale(1);
-          }
-          50% {
-            transform: translateY(-8px) scale(1.05);
-          }
-        }
-
-        @keyframes bounce-reverse {
-          0%, 100% {
-            transform: translateY(0px) scale(1);
-          }
-          50% {
-            transform: translateY(8px) scale(1.1);
-          }
-        }
-
-        .animate-float-wave {
-          animation: float-wave 14s ease-in-out infinite;
-        }
-
-        .animate-float-wave-reverse {
-          animation: float-wave-reverse 11s ease-in-out infinite;
-        }
-
-        .animate-pulse-wave {
-          animation: pulse-wave 9s ease-in-out infinite;
-        }
-
-        /* Enhanced card hover effects */
-        .glass-card:hover {
-          backdrop-filter: blur(25px);
-          box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.15);
-          transform: translateY(-5px);
-        }
-
-        /* Interactive group effects */
-        .group:hover {
-          z-index: 10;
-        }
-
-        .group:hover svg {
-          filter: drop-shadow(0 0 12px rgba(56, 227, 255, 0.8));
-        }
-
-        /* Smooth transitions for all elements */
-        * {
-          transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        /* Enhanced button effects */
-        .btn-primary:hover {
-          box-shadow: 0 25px 50px rgba(30, 120, 255, 0.5), 0 0 0 1px rgba(30, 120, 255, 0.3);
-        }
-
-        /* Social icon hover effects */
-        .group:hover a {
-          transform: translateY(-3px) scale(1.1);
-        }
-      `}</style>
     </section>
   );
 }

@@ -418,15 +418,25 @@
   animation: cursor-trail 1s ease-out forwards;
 }
 
-@keyframes cursor-trail {
+@keyframes particle-float {
   0% {
-    transform: scale(1) translate(-50%, -50%);
+    transform: translateY(100vh) scale(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
     opacity: 1;
   }
   100% {
-    transform: scale(0) translate(-50%, -50%);
+    transform: translateY(-100px) scale(1);
     opacity: 0;
   }
+}
+
+.animate-particle-float {
+  animation: particle-float linear infinite;
 }
 
 /* Performance optimizations */
